@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Typography, Card, CardActionArea,CardContent,CardMedia } from '@material-ui/core';
+import { Grid, Typography, Card, CardActionArea,CardContent,CardMedia, Button,CardActions } from '@material-ui/core';
 import List from '@material-ui/core/List';
+import './AisleCard.css';
 
 
 function AisleCard(props : any) {
@@ -35,7 +36,12 @@ function AisleCard(props : any) {
                         </span>
                     ))}
                     
+                    <br></br>
+                    <br></br>
+                    <Button size="small" color="primary">Share</Button>
+                    
                     </Typography>
+                    
                 </CardContent>
                 </CardActionArea>
         

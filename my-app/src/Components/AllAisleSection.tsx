@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Grid, TextField, Button } from '@material-ui/core';
+import { Grid, TextField, Button, Paper } from '@material-ui/core';
 import SearchById from './SearchById';
 import SearchByName from './SearchByName';
 import AddSection from './AddSection';
@@ -28,7 +28,8 @@ function AllAisleSection(props : any) {
 
     return (
         <div>
-            <h1 className='title'>Whats in The Aisle?</h1>
+            <h1 className='title'>What's in The Aisle?</h1>
+            
           <Grid
             container
             direction="row"
@@ -39,9 +40,14 @@ function AllAisleSection(props : any) {
               <SearchByName/>
               <AddSection/>
               <DeleteAisle/> 
+              
 
         </Grid>
+        <br></br>
+        <br></br>
+        <br></br>
         {!isLoading && currentAisle ? (
+            
             
             <AisleCard aisleName={currentAisle.aisleName} 
             aisleID={currentAisle.aisleID} 
@@ -49,6 +55,7 @@ function AllAisleSection(props : any) {
             />
             
         ) : null } 
+        
         </div>
     )
 
