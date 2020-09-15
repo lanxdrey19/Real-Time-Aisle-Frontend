@@ -4,7 +4,6 @@ import Alert from '@material-ui/lab/Alert';
 import AlertTitle from '@material-ui/lab/AlertTitle';
 import SearchById from './SearchById';
 import SearchByName from './SearchByName';
-import AddSection from './AddSection';
 import DeleteAisle from './DeleteAisle';
 import { GetAisleById } from '.././ApiCalls/GetAisleById';
 import { GetAisleByName } from '.././ApiCalls/GetAisleByName';
@@ -118,6 +117,8 @@ const deleteAisleById = async (query : any) => {
 }
 
 
+
+
     return (
         <div>
             <h1 className='title'>What's in The Aisle?</h1>
@@ -130,7 +131,7 @@ const deleteAisleById = async (query : any) => {
           >
               <SearchById retrieveAisle={retrieveAisle}/>
               <SearchByName retrieveAisleByName={retrieveAisleByName}/>
-              <AddSection/>
+              
               <DeleteAisle deleteAisleById={deleteAisleById}/> 
               
 
