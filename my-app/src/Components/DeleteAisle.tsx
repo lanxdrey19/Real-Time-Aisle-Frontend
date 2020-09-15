@@ -22,7 +22,7 @@ function DeleteAisle(props : any) {
           </form>
           
           
-            <Button variant="contained" color="secondary" size="large" style={{  width: "100%" }}>
+            <Button variant="contained" color="secondary" size="large" style={{  width: "100%" }} onClick={(e) => props.deleteAisleById(AisleToBeDeleted)}>
                 Submit
             </Button>
           
