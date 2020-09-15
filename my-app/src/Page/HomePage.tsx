@@ -4,6 +4,8 @@ import AllAisleSection from '../Components/AllAisleSection';
 import logo from './app-logo.png';
 import './HomePage.css';
 
+
+
 function HomePage() {
     return (
         <div>
@@ -16,8 +18,12 @@ function HomePage() {
           >
             <h1 className='title'>Real Time Aisle</h1>
             <img src={logo} alt="logo" className="appLogo" /> 
+            
+            
             </Grid>
+            
            <AllAisleSection/>
+           
            
             
         </div>
