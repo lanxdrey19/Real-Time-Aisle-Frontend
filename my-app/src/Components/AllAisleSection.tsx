@@ -10,6 +10,8 @@ import { GetAisleByName } from '.././ApiCalls/GetAisleByName';
 import { DeleteAisleById } from '.././ApiCalls/DeleteAisleById';
 import dataInitialiser from '.././dataInitialiser';
 import AisleCard from './AisleCard';
+import logo from './RealTime.png';
+import './AllAisleSection.css';
 
 
 function AllAisleSection(props : any) {
@@ -125,8 +127,9 @@ const deleteAisleById = async (query : any) => {
             container
             direction="row"
             justify="space-around"
-            alignItems="flex-start"
+            alignItems="center"
           >
+              <img src={logo} alt="logo" className="appLogo" /> 
               <SearchById retrieveAisle={retrieveAisle}/>
               <SearchByName retrieveAisleByName={retrieveAisleByName}/>
               
