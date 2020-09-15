@@ -6,6 +6,7 @@ import AddSection from './AddSection';
 import DeleteAisle from './DeleteAisle';
 import { GetAisleById } from '.././ApiCalls/GetAisleById';
 import dataInitialiser from '.././dataInitialiser';
+import AisleCard from './AisleCard';
 
 
 function AllAisleSection(props : any) {
@@ -42,21 +43,10 @@ function AllAisleSection(props : any) {
         </Grid>
         {!isLoading && currentAisle ? (
             
-            <h1>
-                {currentAisle.aisleID}
-                <br></br>
-                {currentAisle.aisleName}
-                <br></br>
-                Sections:
-                <br></br>
-                {currentAisle.sections.map((section : any ,key : any) => (
-                        <span key={key}>
-                            {section.sectionName + " "}
-                            <br></br>
-                        </span>
-                    ))}
-                
-            </h1>
+            <AisleCard aisleName={currentAisle.aisleName} 
+            aisleID={currentAisle.aisleID} 
+            sections={currentAisle.sections}
+            />
             
         ) : null } 
         </div>
