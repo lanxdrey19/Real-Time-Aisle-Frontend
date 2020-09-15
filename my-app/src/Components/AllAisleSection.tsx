@@ -46,6 +46,15 @@ function AllAisleSection(props : any) {
                 {currentAisle.aisleID}
                 <br></br>
                 {currentAisle.aisleName}
+                <br></br>
+                Sections:
+                <br></br>
+                {currentAisle.sections.map((section : any ,key : any) => (
+                        <span key={key}>
+                            {section.sectionName + " "}
+                            <br></br>
+                        </span>
+                    ))}
                 
             </h1>
             
