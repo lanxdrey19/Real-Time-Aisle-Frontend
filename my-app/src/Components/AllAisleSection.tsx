@@ -121,12 +121,10 @@ const deleteAisleById = async (query : any) => {
 
     return (
         <div>
-            <h1 className='title'>What's in The Aisle?</h1>
-            
           <Grid
             container
             direction="row"
-            justify="space-evenly"
+            justify="space-around"
             alignItems="flex-start"
           >
               <SearchById retrieveAisle={retrieveAisle}/>

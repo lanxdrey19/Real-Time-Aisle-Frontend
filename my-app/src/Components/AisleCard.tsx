@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Card, CardActionArea,CardContent,CardMedia, Button,CardActions } from '@material-ui/core';
+import { Grid, Typography, Card, CardActionArea,CardContent,CardMedia, Button,CardActions, Paper } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import './AisleCard.css';
 
@@ -12,10 +12,12 @@ function AisleCard(props : any) {
         direction="row"
         justify="center"
         alignItems="center"
+        
+        
         >
-        <Grid
-        item xs = {12} md = {6}>
-            <Card className='cardRoot'>
+        
+        <Grid item xs = {12} md = {6}>
+            <Card className="cardRoot">
                 <CardActionArea>
                 
                 <CardContent>
