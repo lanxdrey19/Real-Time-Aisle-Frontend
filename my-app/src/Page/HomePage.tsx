@@ -1,12 +1,11 @@
 import React from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
+import AllAisleSection from '../Components/AllAisleSection';
 
 function HomePage() {
     return (
         <div>
-            <Button variant="outlined" color="primary">
-                Search by ID
-            </Button>
+           <AllAisleSection/>
         </div>
     )
 }
