@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
 
 function DeleteAisle(props : any) {
+
+    const [AisleToBeDeleted , setAisleToBeDeleted] = useState('');
 
     return (
         <div>
@@ -15,7 +17,7 @@ function DeleteAisle(props : any) {
           
           <form className='searchField' noValidate autoComplete="off">
            
-            <TextField id="filled-basic" label="Delete" variant="filled" size="small" />
+            <TextField id="filled-basic" label="Delete" variant="filled" size="small" onChange={e => setAisleToBeDeleted(e.target.value)}/>
  
           </form>
           

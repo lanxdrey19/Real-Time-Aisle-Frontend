@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
 
 function AddSection(props : any) {
+
+    const [SectionToBeAdded , setSectionToBeAdded] = useState('');
+    const [AisleToBeAdded , setAisleToBeAdded] = useState('');
 
     return (
         <div>
@@ -15,12 +18,12 @@ function AddSection(props : any) {
           
           <form className='searchField' noValidate autoComplete="off">
            
-            <TextField id="filled-basic" label="Add Section" variant="filled" size="small" />
+            <TextField id="filled-basic" label="Add Section" variant="filled" size="small" onChange={e => setSectionToBeAdded(e.target.value)} />
  
           </form>
           <form className='searchField' noValidate autoComplete="off">
            
-            <TextField id="filled-basic" label="To Aisle (Aisle ID)" variant="filled" size="small" />
+            <TextField id="filled-basic" label="To Aisle (Enter Aisle ID)" variant="filled" size="small" onChange={e => setAisleToBeAdded(e.target.value)} />
  
           </form>
           

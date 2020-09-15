@@ -1,12 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
 import SearchById from './SearchById';
 import SearchByName from './SearchByName';
 import AddSection from './AddSection';
 import DeleteAisle from './DeleteAisle';
+import { GetAisleById } from '.././ApiCalls/GetAisleById';
+import dataInitialiser from '.././dataInitialiser';
 
 
 function AllAisleSection(props : any) {
+
+    const [currentAisle , setCurrentAisle] = useState(dataInitialiser)
+    const [isLoading , setLoadingState ] = useState(false);
+
+    const retrieveAisle = async (query : any) => {
+        console.log(query)
+        setLoadingState(true);
+        const response = await GetAisleById(query);
+        const jsonResults = await response.json();
+        console.log(jsonResults);
+        setCurrentAisle(jsonResults);
+        setLoadingState(false);
+
+}
+
 
     return (
         <div>
@@ -17,11 +34,22 @@ function AllAisleSection(props : any) {
             justify="space-evenly"
             alignItems="flex-start"
           >
-              <SearchById/>
+              <SearchById retrieveAisle={retrieveAisle}/>
               <SearchByName/>
               <AddSection/>
               <DeleteAisle/> 
+
         </Grid>
+        {!isLoading && currentAisle ? (
+            
+            <h1>
+                {currentAisle.aisleID}
+                <br></br>
+                {currentAisle.aisleName}
+                
+            </h1>
+            
+        ) : null } 
         </div>
     )
 

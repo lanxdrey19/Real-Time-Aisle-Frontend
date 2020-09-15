@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
 
 function SearchByName(props : any) {
+
+    const [searchEntryByName , setSearchEntryByName] = useState('');
 
     return (
         <div>
@@ -15,7 +17,7 @@ function SearchByName(props : any) {
           
           <form className='searchField' noValidate autoComplete="off">
            
-            <TextField id="filled-basic" label="Search" variant="filled" size="small" />
+            <TextField id="filled-basic" label="Search" variant="filled" size="small" onChange={e => setSearchEntryByName(e.target.value)}/>
  
           </form>
           
