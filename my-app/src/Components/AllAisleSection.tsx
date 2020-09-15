@@ -11,17 +11,38 @@ import AisleCard from './AisleCard';
 
 function AllAisleSection(props : any) {
 
-    const [currentAisle , setCurrentAisle] = useState(dataInitialiser)
+    const [currentAisle , setCurrentAisle] = useState(dataInitialiser);
     const [isLoading , setLoadingState ] = useState(false);
+    const [errorMsg, setErrorMsg ] = useState(false);
 
     const retrieveAisle = async (query : any) => {
+        
+        console.log("normal");
+        setErrorMsg(false);
+        
+        try {
         console.log(query)
         setLoadingState(true);
         const response = await GetAisleById(query);
+        console.log(response);
+        if (!response.ok) {
+            setErrorMsg(true);
+            console.log("leshgooo");
+        } else {
+        
+
         const jsonResults = await response.json();
+
         console.log(jsonResults);
         setCurrentAisle(jsonResults);
+
+        }
+        
         setLoadingState(false);
+
+        } catch (error) {
+            setErrorMsg(true);
+        }
 
 }
 
@@ -46,7 +67,15 @@ function AllAisleSection(props : any) {
         <br></br>
         <br></br>
         <br></br>
-        {!isLoading && currentAisle ? (
+
+        {isLoading  ? (
+            
+            
+            <h2>Please Wait...</h2>
+            
+        ) : null } 
+
+        {!isLoading && currentAisle && !errorMsg ? (
             
             
             <AisleCard aisleName={currentAisle.aisleName} 
@@ -54,9 +83,10 @@ function AllAisleSection(props : any) {
             sections={currentAisle.sections}
             />
             
-        ) : null } 
+        ) : <h2> Aisle not found. Please refine your search...</h2> } 
         
         </div>
+        
     )
 
 }

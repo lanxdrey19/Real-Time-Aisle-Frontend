@@ -23,28 +23,33 @@ function AisleCard(props : any) {
                     #{props.aisleID}
                     <br></br>
                     {props.aisleName}
+                    <br></br>
+                    
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                     
-                    <br></br>
                     Sections:
-                    <br></br>
+                    
                     {props.sections.map((sections : any ,key : any) => (
                         <span key={key}>
-                            {sections.sectionName + " "}
                             <br></br>
+                            {sections.sectionName + " "}
+                            
                         </span>
                     ))}
                     
+
+                    
+                        
                     <br></br>
                     <br></br>
-                    <Button size="small" color="primary">Share</Button>
+                    
                     
                     </Typography>
                     
                 </CardContent>
                 </CardActionArea>
-        
+                <Button size="small" color="primary">Share</Button>
             </Card>
 
         </Grid>
