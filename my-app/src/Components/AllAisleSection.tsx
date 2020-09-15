@@ -5,6 +5,7 @@ import SearchByName from './SearchByName';
 import AddSection from './AddSection';
 import DeleteAisle from './DeleteAisle';
 import { GetAisleById } from '.././ApiCalls/GetAisleById';
+import { GetAisleByName } from '.././ApiCalls/GetAisleByName';
 import dataInitialiser from '.././dataInitialiser';
 import AisleCard from './AisleCard';
 
@@ -16,18 +17,18 @@ function AllAisleSection(props : any) {
     const [errorMsg, setErrorMsg ] = useState(false);
 
     const retrieveAisle = async (query : any) => {
-        
-        console.log("normal");
+        setLoadingState(true);
+        //console.log("normal");
         setErrorMsg(false);
         
         try {
         console.log(query)
-        setLoadingState(true);
+        
         const response = await GetAisleById(query);
         console.log(response);
         if (!response.ok) {
             setErrorMsg(true);
-            console.log("leshgooo");
+            //console.log("error");
         } else {
         
 
@@ -46,6 +47,37 @@ function AllAisleSection(props : any) {
 
 }
 
+const retrieveAisleByName = async (query : any) => {
+    setLoadingState(true);
+    //console.log("normal");
+    setErrorMsg(false);
+    
+    try {
+    console.log(query)
+    
+    const response = await GetAisleByName(query);
+    console.log(response);
+    if (!response.ok) {
+        setErrorMsg(true);
+        //console.log("error");
+    } else {
+    
+
+    const jsonResults = await response.json();
+
+    console.log(jsonResults);
+    setCurrentAisle(jsonResults);
+
+    }
+    
+    setLoadingState(false);
+
+    } catch (error) {
+        setErrorMsg(true);
+    }
+
+}
+
 
     return (
         <div>
@@ -58,7 +90,7 @@ function AllAisleSection(props : any) {
             alignItems="flex-start"
           >
               <SearchById retrieveAisle={retrieveAisle}/>
-              <SearchByName/>
+              <SearchByName retrieveAisleByName={retrieveAisleByName}/>
               <AddSection/>
               <DeleteAisle/> 
               

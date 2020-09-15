@@ -22,7 +22,7 @@ function SearchByName(props : any) {
           </form>
           
           
-            <Button variant="contained" color="primary" size="large" style={{  width: "100%" }} >
+            <Button variant="contained" color="primary" size="large" style={{  width: "100%" }} onClick={(e) => props.retrieveAisleByName(searchEntryByName)} >
                 Submit
             </Button>
           
