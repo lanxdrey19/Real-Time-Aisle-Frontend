@@ -170,7 +170,10 @@ const deleteAisleById = async (query : any) => {
             />
             
             
-        ) : <h2> Aisle not found. Please refine your search...</h2> } 
+        ) : <Alert severity="error">
+        <AlertTitle>Error</AlertTitle>
+        Aisle Not Found — <strong>Please refine your search...</strong>
+        </Alert> } 
 
         {alertTime && !errorMsg && !isLoading ? (
             
