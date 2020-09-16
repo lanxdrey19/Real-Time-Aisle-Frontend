@@ -140,6 +140,7 @@ const deleteAisleById = async (query : any) => {
             direction="row"
             justify="space-around"
             alignItems="center"
+            className="top-grid"
           >
               <img src={logo} alt="logo" className="appLogo" /> 
               <SearchById retrieveAisle={retrieveAisle}/>

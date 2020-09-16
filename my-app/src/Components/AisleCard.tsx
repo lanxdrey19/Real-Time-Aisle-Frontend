@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Typography, Card, CardActionArea,CardContent,CardMedia, Button,CardActions, Paper } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import { FacebookShareButton, FacebookIcon} from 'react-share'
+import './AisleCard.css';
 
 
 
@@ -17,7 +18,7 @@ function AisleCard(props : any) {
         
         >
         
-        <Grid item xs = {12} md = {6}>
+        <Grid item xs = {12} md = {6} className="aisle-card">
             <Card className="cardRoot">
                 <CardActionArea>
                 
