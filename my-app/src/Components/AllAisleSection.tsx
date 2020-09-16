@@ -157,7 +157,7 @@ const deleteAisleById = async (query : any) => {
         {isLoading  ? (
             
             
-            <CircularProgress />
+            <CircularProgress className="progress"/>
             
         ) : null } 
 
