@@ -22,7 +22,7 @@ function SearchByName(props : any) {
           let CurrentWordWritten = e.results[CurrentWordIndex][0].transcript;
           console.log(CurrentWordWritten);
     
-          if (CurrentWordWritten.toLowerCase() === 'name' || CurrentWordWritten.toLowerCase() === ' name') {
+          if (CurrentWordWritten.toLowerCase() === 'search' || CurrentWordWritten.toLowerCase() === ' search') {
             props.retrieveAisleByName(searchEntryByName);
           }
     
