@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Grid, TextField, Button, Paper } from '@material-ui/core';
+import { Grid, TextField, Button, Paper , CircularProgress} from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import AlertTitle from '@material-ui/lab/AlertTitle';
 import SearchById from './SearchById';
@@ -51,6 +51,10 @@ function AllAisleSection(props : any) {
             setErrorMsg(true);
         }
 
+        if ( !currentAisle ) {
+            setErrorMsg(true);
+        }
+
 }
 
 const retrieveAisleByName = async (query : any) => {
@@ -80,6 +84,10 @@ const retrieveAisleByName = async (query : any) => {
     setLoadingState(false);
 
     } catch (error) {
+        setErrorMsg(true);
+    }
+
+    if ( !currentAisle ) {
         setErrorMsg(true);
     }
 
@@ -116,6 +124,10 @@ const deleteAisleById = async (query : any) => {
         setErrorMsg(true);
     }
 
+    if ( !currentAisle ) {
+        setErrorMsg(true);
+    }
+
 }
 
 
@@ -144,17 +156,18 @@ const deleteAisleById = async (query : any) => {
         {isLoading  ? (
             
             
-            <h2>Please Wait...</h2>
+            <CircularProgress />
             
         ) : null } 
 
-        {!isLoading && currentAisle && !errorMsg  ? (
-            
+
+        { !isLoading && !errorMsg  ? (
             
             <AisleCard aisleName={currentAisle.aisleName} 
             aisleID={currentAisle.aisleID} 
             sections={currentAisle.sections}
             />
+            
             
         ) : <h2> Aisle not found. Please refine your search...</h2> } 
 
@@ -163,7 +176,7 @@ const deleteAisleById = async (query : any) => {
             
             <Alert severity="success">
             <AlertTitle>Success</AlertTitle>
-            Aisle has been deleted — <strong>Will be updated on your next search</strong>
+            The aisle shown above has been deleted — <strong>Will be updated on your next search</strong>
             </Alert>
             
         ) : null} 
