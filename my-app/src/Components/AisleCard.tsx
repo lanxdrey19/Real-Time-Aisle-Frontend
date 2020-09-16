@@ -17,6 +17,8 @@ function AisleCard(props : any) {
         
         
         >
+
+        
         
         <Grid item xs = {12} md = {6} className="aisle-card">
             <Card className="cardRoot">
@@ -49,7 +51,13 @@ function AisleCard(props : any) {
                     <br></br>
                     <br></br>
                     
-                    <FacebookShareButton
+                    
+                    </Typography>
+                    
+                </CardContent>
+            
+                </CardActionArea>
+                <FacebookShareButton
                 url="https://github.com/"
                 quote="Look at what's in your favorite aisle!"
                 hashtag="#RealTimeAisle">
@@ -59,15 +67,12 @@ function AisleCard(props : any) {
                     
                 <FacebookIcon size={32} round />
             </FacebookShareButton>
-                    </Typography>
-                    
-                </CardContent>
-                
-                </CardActionArea>
                 
             </Card>
-
+            
+            
         </Grid>
+        
         </Grid>
     ) 
 }

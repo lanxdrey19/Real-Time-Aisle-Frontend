@@ -7,14 +7,8 @@ import AllAisleSection from '../Components/AllAisleSection';
 
 function HomePage() {
     return (
-        <div>
-
-            
-            
-           <AllAisleSection/>
-           
-           
-            
+        <div> 
+           <AllAisleSection/> 
         </div>
     )
 }

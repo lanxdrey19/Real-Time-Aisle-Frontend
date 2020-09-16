@@ -1,9 +1,46 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Grid, TextField, Button } from '@material-ui/core';
+
+const Speech = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+const Recognise = new Speech();
+Recognise.start();
 
 function SearchByName(props : any) {
 
     const [searchEntryByName , setSearchEntryByName] = useState('');
+
+    const voiceCommand = () => {
+
+        Recognise.onstart = () => {
+          console.log("started");
+        }
+    
+        
+    
+        Recognise.onresult = (e : any) => {
+          let CurrentWordIndex = e.resultIndex;
+          let CurrentWordWritten = e.results[CurrentWordIndex][0].transcript;
+          console.log(CurrentWordWritten);
+    
+          if (CurrentWordWritten.toLowerCase() === 'name' || CurrentWordWritten.toLowerCase() === ' name') {
+            props.retrieveAisleByName(searchEntryByName);
+          }
+    
+          setTimeout( () => {
+              Recognise.start();
+          } , 100);
+    
+          Recognise.onspeechend = () => {
+            Recognise.stop();
+            console.log("stop");
+          }
+        }
+      }
+    
+      useEffect(() => {
+        voiceCommand();
+      });
+  
 
     return (
         <div>
