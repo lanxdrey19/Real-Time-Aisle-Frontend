@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import { Grid, TextField, Button, Paper , CircularProgress} from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import AlertTitle from '@material-ui/lab/AlertTitle';
-import SearchById from './SearchById';
-import SearchByName from './SearchByName';
+import SearchById from './SearchById'
+import SearchByName from './SearchByName'
 import DeleteAisle from './DeleteAisle';
-import { GetAisleById } from './../ApiCalls/GetAisleById';
-import { GetAisleByName } from './../ApiCalls/GetAisleByName';
-import { DeleteAisleById } from './../ApiCalls/DeleteAisleById';
-import dataInitialiser from './../dataInitialiser';
+import { GetAisleById } from './GetAisleById';
+import { GetAisleByName } from './GetAisleByName';
+import { DeleteAisleById } from './DeleteAisleById';
+import dataInitialiser from './dataInitialiser';
 import AisleCard from './AisleCard';
 import logo from './RealTime.png';
 import './AllAisleSection.css';
