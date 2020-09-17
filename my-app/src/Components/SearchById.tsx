@@ -32,7 +32,7 @@ function SearchById(props : any) {
           
           <form className='searchField' noValidate autoComplete="off">
            
-            <TextField id="filled-basic" label="Search" variant="filled" size="small" onChange={e => setSearchEntryById(e.target.value)}/>
+            <TextField id="filled-basic" label="Search" variant="filled" size="small" onChange={(e : any) => setSearchEntryById(e.target.value)}/>
  
           </form>
           

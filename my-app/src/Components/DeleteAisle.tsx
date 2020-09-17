@@ -31,7 +31,7 @@ function DeleteAisle(props : any) {
           
           <form className='searchField' noValidate autoComplete="off">
            
-            <TextField id="filled-basic" label="Delete" variant="filled" size="small" onChange={e => setAisleToBeDeleted(e.target.value)}/>
+            <TextField id="filled-basic" label="Delete" variant="filled" size="small" onChange={(e : any) => setAisleToBeDeleted(e.target.value)}/>
  
           </form>
           
