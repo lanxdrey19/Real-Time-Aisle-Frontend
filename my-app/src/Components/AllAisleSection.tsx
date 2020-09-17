@@ -161,6 +161,16 @@ const deleteAisleById = async (query : any) => {
             
         ) : null } 
 
+        {alertTime && !errorMsg && !isLoading ? (
+            
+            
+            <Alert severity="success">
+            <AlertTitle>Success</AlertTitle>
+            The aisle shown above has been deleted — <strong>Will be updated on your next search</strong>
+            </Alert>
+            
+        ) : null} 
+
 
         { !isLoading && !errorMsg  ? (
             
@@ -180,16 +190,6 @@ const deleteAisleById = async (query : any) => {
         </Alert>
 
         ) : null }
-
-        {alertTime && !errorMsg && !isLoading ? (
-            
-            
-            <Alert severity="success">
-            <AlertTitle>Success</AlertTitle>
-            The aisle shown above has been deleted — <strong>Will be updated on your next search</strong>
-            </Alert>
-            
-        ) : null} 
 
         {alertTime && errorMsg && !isLoading ? (
             
