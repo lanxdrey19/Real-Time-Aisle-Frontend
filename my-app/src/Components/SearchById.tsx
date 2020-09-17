@@ -19,9 +19,10 @@ function SearchById(props : any) {
           </Button>
   
             { english ? (
-            <h2 className='title'>Search By ID</h2>
+            <h2 className='title'>Search By Aisle Number</h2>
 
-            ) :<h2 className='title'>Buscar Por ID </h2>}
+            ) :<h2 className='title'>
+            Buscar Por Número De Pasillo </h2>}
           <Grid
             container
             direction="column"

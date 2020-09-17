@@ -55,7 +55,7 @@ function SearchByName(props : any) {
             { english ? (
             <h2 className='title'>Search By Name</h2>
 
-            ) :<h2 className='title'>Buscar Por nombre </h2>}
+            ) :<h2 className='title'>Buscar Por Nombre </h2>}
           <Grid
             container
             direction="column"

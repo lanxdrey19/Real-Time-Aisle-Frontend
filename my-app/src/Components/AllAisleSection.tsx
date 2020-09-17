@@ -190,7 +190,7 @@ const deleteAisleById = async (query : any) => {
         </Alert>
 
         ) : null }
-
+  
         {alertTime && errorMsg && !isLoading ? (
             
             
