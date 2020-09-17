@@ -6,12 +6,11 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
-
 variables:
   rootDir: 'my-app'
   buildDir: '$(rootDir)/build'
+pool:
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
