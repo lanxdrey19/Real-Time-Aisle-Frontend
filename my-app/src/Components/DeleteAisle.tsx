@@ -18,9 +18,9 @@ function DeleteAisle(props : any) {
           </Button>
   
             { english ? (
-            <h2 className='title'>Delete Aisle By ID</h2>
+            <h2 className='title'>Delete Aisle Number</h2>
 
-            ) :<h2 className='title'>Eliminar Por ID </h2>}
+            ) :<h2 className='title'>Eliminar Por Número</h2>}
             
           <Grid
             container
@@ -36,7 +36,7 @@ function DeleteAisle(props : any) {
           </form>
           
           
-            <Button variant="contained" color="secondary" size="large" style={{  width: "100%" }} onClick={(e) => props.deleteAisleById(AisleToBeDeleted)}>
+            <Button variant="contained" color="secondary" size="large" style={{  width: "95%" }} onClick={(e) => props.deleteAisleById(AisleToBeDeleted)}>
             { english ? (
                 <h3>Submit </h3>
 
