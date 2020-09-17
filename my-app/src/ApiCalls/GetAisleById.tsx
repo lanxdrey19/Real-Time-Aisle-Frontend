@@ -1,4 +1,4 @@
-import React from 'react';
+
 
   
 const urlBeginning = 'https://msap2api.azurewebsites.net/api/Aisles/GetAisle/';
