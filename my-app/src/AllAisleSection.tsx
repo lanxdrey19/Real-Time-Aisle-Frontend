@@ -10,7 +10,7 @@ import { GetAisleByName } from './GetAisleByName';
 import { DeleteAisleById } from './DeleteAisleById';
 import dataInitialiser from './dataInitialiser';
 import AisleCard from './AisleCard';
-import logo from './RealTime.png';
+//import logo from './RealTime.png';
 import './AllAisleSection.css';
 
 
@@ -142,7 +142,7 @@ const deleteAisleById = async (query : any) => {
             alignItems="center"
             className="top-grid"
           >
-              <img src={logo} alt="logo" className="appLogo" /> 
+              <img src={'./RealTime.png'} alt="logo" className="appLogo" /> 
               <SearchById retrieveAisle={retrieveAisle}/>
               <SearchByName retrieveAisleByName={retrieveAisleByName}/>
               
