@@ -49,7 +49,7 @@ function SearchByName(props : any) {
             english
             </Button>
             <Button onClick={(e) => setEnglish(false)}>
-            spanish
+            español
           </Button>
   
             { english ? (
