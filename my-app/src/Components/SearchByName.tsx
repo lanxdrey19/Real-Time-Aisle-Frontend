@@ -8,6 +8,7 @@ Recognise.start();
 function SearchByName(props : any) {
 
     const [searchEntryByName , setSearchEntryByName] = useState('');
+    const [english , setEnglish] = useState(true);
 
     const voiceCommand = () => {
 
@@ -44,7 +45,17 @@ function SearchByName(props : any) {
 
     return (
         <div>
+            <Button onClick={(e) => setEnglish(true)} >
+            english
+            </Button>
+            <Button onClick={(e) => setEnglish(false)}>
+            spanish
+          </Button>
+  
+            { english ? (
             <h2 className='title'>Search By Name</h2>
+
+            ) :<h2 className='title'>Buscar Por nombre </h2>}
           <Grid
             container
             direction="column"
@@ -60,7 +71,11 @@ function SearchByName(props : any) {
           
           
             <Button variant="contained" color="primary" size="large" style={{  width: "100%" }} onClick={(e) => props.retrieveAisleByName(searchEntryByName)} >
-                Submit
+            { english ? (
+                <h3>Submit </h3>
+
+            ) : <h3>entrar </h3>}
+                
             </Button>
           
 

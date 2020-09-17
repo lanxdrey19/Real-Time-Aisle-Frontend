@@ -6,11 +6,22 @@ import { Grid, TextField, Button } from '@material-ui/core';
 function DeleteAisle(props : any) {
 
     const [AisleToBeDeleted , setAisleToBeDeleted] = useState('');
-
+    const [english , setEnglish] = useState(true);
 
     return (
         <div>
-            <h2 className='title'>Delete Aisle</h2>
+          <Button onClick={(e) => setEnglish(true)} >
+            english
+            </Button>
+            <Button onClick={(e) => setEnglish(false)}>
+            spanish
+          </Button>
+  
+            { english ? (
+            <h2 className='title'>Delete Aisle By ID</h2>
+
+            ) :<h2 className='title'>Eliminar Por ID </h2>}
+            
           <Grid
             container
             direction="column"
@@ -26,7 +37,11 @@ function DeleteAisle(props : any) {
           
           
             <Button variant="contained" color="secondary" size="large" style={{  width: "100%" }} onClick={(e) => props.deleteAisleById(AisleToBeDeleted)}>
-                Submit
+            { english ? (
+                <h3>Submit </h3>
+
+            ) : <h3>entrar </h3>}
+                
             </Button>
           
 
