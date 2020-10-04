@@ -58,7 +58,7 @@ function AisleCard(props : any) {
             
                 </CardActionArea>
                 <FacebookShareButton
-                url="https://github.com/"
+                url="https://realtimeaislemsa2020p2.azurewebsites.net/"
                 quote="Look at what's in your favorite aisle!"
                 hashtag="#RealTimeAisle">
                     <br></br>
